@@ -1,0 +1,10 @@
+{% if posts %}
+  {% for post in posts %}
+    <div class="col-md-8 px-0 mb-4">
+      <h1 class="display-4 font-italic">{{ post.title }}</h1>
+      <p class="lead my-3">{{ post.short_description }}</p>
+    </div>
+  {% endfor %}
+{% else %}
+  <p class="text-muted ml-3">No posts available.</p>
+{% endif %}
