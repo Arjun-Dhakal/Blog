@@ -36,6 +36,23 @@ class Blog(models.Model):
     def __str__(self):
         return self.title
 
+class About_us(models.Model):
+    title=models.CharField(max_length=200)
+    descretion=models.TextField()
+
+    def __str__(self):
+        return self.title
+    
+class Social_link(models.Model):
+    facebook=models.URLField(max_length=200,blank=True)
+    twitter=models.URLField(max_length=200,blank=True)
+    instagram=models.URLField(max_length=200,blank=True)
+    linkedin=models.URLField(max_length=200,blank=True)
+
+    def __str__(self):
+        return "Social Links"
+
+
 
 
     

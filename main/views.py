@@ -22,4 +22,18 @@ def post_by_category(request,category_id):
     }
     return render(request,'core/post.html',Context)
 
+def slug(request,slug):
+    slug=Blog.objects.get(slug=slug)
+    category=Category.objects.all()
+    Context={
+        'slug':slug,
+        'category':category
+    }   
+    return render(request,'core/blog.html',Context)
+
+def about_us(request):
+
+    return render(request,'core/about-us.html')
+
+
 
