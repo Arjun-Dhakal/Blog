@@ -3,6 +3,7 @@ from main.models import Category,Blog,About_us,Social_link
 from django.contrib.auth.models import User
 from django.contrib import messages
 from django.contrib.auth import authenticate,login,logout
+from django.contrib.auth.decorators import login_required
 
 
 
@@ -22,6 +23,7 @@ def home(request):
         }
     return render(request,'core/home-blogs.html',Context)
 
+@login_required
 def post_by_category(request,category_id):
     post=Blog.objects.filter(status=1,Category_id=category_id)
 
@@ -100,6 +102,11 @@ def log_in(request):
             return redirect('home')  
 
     return render(request, 'core/login.html')
+
+def log_out(request):
+    logout(request)
+    messages.success(request, 'You have been logged out.')
+    return redirect('home')
 
 
         
