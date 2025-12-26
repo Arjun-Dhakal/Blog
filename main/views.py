@@ -23,7 +23,7 @@ def home(request):
         }
     return render(request,'core/home-blogs.html',Context)
 
-@login_required
+@login_required(login_url='login')
 def post_by_category(request,category_id):
     post=Blog.objects.filter(status=1,Category_id=category_id)
 

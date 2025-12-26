@@ -5,7 +5,17 @@
   {% for post in posts %}
     <div class="col-md-8 px-0 mb-4">
       <h1 class="display-4 font-italic">{{ post.title }}</h1>
+      <small class="text-muted d-block mb-2">
+        {{ post.created_at|timesince }} ago | {{ post.author }}
+      </small>
       <p class="lead my-3">{{ post.short_description }}</p>
+      <figure class="mb-4 text-center">
+        <img src="{{ post.image.url }}" 
+             class="img-fluid rounded w-75" 
+             alt="Post image">
+    </figure>
+    <p class="text-muted d-block mb-2">
+      {{ post.blog_content }}
     </div>
   {% endfor %}
 {% else %}
