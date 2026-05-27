@@ -1,6 +1,6 @@
 from django.shortcuts import render,redirect,get_object_or_404
 from core.form import Categoryform
-from main.models import Category, Blog, Social_link
+from main.models import Category, Blog, Social_link,About_us
 from core.form import Categoryform,Blogform,AboutusForm,SociallinkForm
 from django.contrib.auth import logout
 
@@ -118,5 +118,40 @@ def logout_view(request):
     logout(request)
     return redirect('superuser_login')
 
+def about_list(request):
+    abouts = About_us.objects.all()
+    context = {
+        'abouts': abouts
+    }
+    return render(request, 'aboutus.html', context)
 
-  
+
+
+
+
+# def cat_list(request):
+#     cat=Category.objects.all()
+#     context = {
+#         'cat':cat
+#     }
+#     return render(request,'dash.html',context)
+
+# def cat_create(request):
+#     if request.method=='POST':
+#         form=Categoryform(request.post)
+#         if form.is_valid():
+#             form.save()
+#             return redirect ("cat_list")
+#     form=Categoryform()
+#     context ={
+#             "form":form
+#     }
+#     return render(request,'add.html',context)
+
+# def cat_update(request,id):
+#     category=get_object_or_404(Category,id)
+#     if request.method=="POST":
+#         form=Categoryform(request.post,instance=category)
+#         if form.is_valid():
+#             form.save()
+

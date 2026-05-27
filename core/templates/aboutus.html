@@ -1,0 +1,41 @@
+{% extends 'base.html' %}
+
+{% block content %}
+
+<div class="container">
+    <div class="mb-4">
+
+        <div class="d-flex justify-content-between align-items-center mb-4">
+            <h2>About Us List</h2>
+            <a href="#" class=" btn btn-primary"> +ADD</a>
+        </div>
+
+        <table class="table table-bordered">
+            <thead>
+                <tr>
+                    <th>#</th>
+                    <th>Title</th>
+                    <th>Description</th>
+                </tr>
+            </thead>
+
+            <tbody>
+                {% for about in abouts %}
+                <tr>
+                    <td>{{ forloop.counter }}</td>
+                    <td>{{ about.title }}</td>
+                    <td>{{ about.descretion }}</td>
+                </tr>
+                {% empty %}
+                <tr>
+                    <td colspan="3">No data found</td>
+                </tr>
+                {% endfor %}
+            </tbody>
+
+        </table>
+
+    </div>
+</div>
+
+{% endblock %}

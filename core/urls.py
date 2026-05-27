@@ -1,5 +1,5 @@
 from django.urls import path
-from .views import dashboard_home, cat_list, blog_list, add_cat, update_cat, delete_cat,add_blog,update_blog,delete_blog,media_list,superuser_login
+from .views import dashboard_home, cat_list, blog_list, add_cat, update_cat, delete_cat,add_blog,update_blog,delete_blog,media_list,superuser_login,about_list
 
 
 
@@ -16,6 +16,7 @@ urlpatterns = [
     path('update_blog/<int:id>/',update_blog,name='update_blog'),
     path('delete_blog/<int:id>/',delete_blog,name='delete_blog'),
     path('media/',media_list,name='media_list'),
+    path('about/',about_list,name='about_list')
 
 
 ]

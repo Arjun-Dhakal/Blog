@@ -30,7 +30,6 @@
     </style>
 </head>
 <body>
-
 <div class="container-fluid">
     <div class="row">
 
@@ -41,7 +40,7 @@
             <a href="{% url 'blog_list' %}">Blogs</a>
             <a href="{% url 'cat_list' %}">Categories</a>
             <a href="{% url 'media_list' %}">Social Links</a>
-            <a href="#">About Us</a>
+            <a href="{% url 'about_list' %}">About Us</a>
             <a href="#">Users</a>
             <a href="{% url 'logout' %}" class="text-danger">Logout</a>
         </div>

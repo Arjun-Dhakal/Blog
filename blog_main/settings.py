@@ -39,7 +39,11 @@ INSTALLED_APPS = [
     'django.contrib.staticfiles',
     'main',
     'core',
+    'crispy_forms',
+    'crispy_bootstrap5',
 ]
+CRISPY_ALLOWED_TEMPLATE_PACKS = "bootstrap5"
+CRISPY_TEMPLATE_PACK = "bootstrap5"
 
 MIDDLEWARE = [
     'django.middleware.security.SecurityMiddleware',
@@ -122,7 +126,7 @@ STATIC_URL = 'static/'
 
 
 # Media files
-MEDIA_ROOO=BASE_DIR/'media/'
+MEDIA_ROOT=BASE_DIR/'media/'
 MEDIA_URL='/media/'
 
 # Default primary key field type
